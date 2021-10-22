@@ -29,13 +29,11 @@ public class PropertyDaoImpl implements PropertyCustomeDao {
 
 	@Override
 	public List<Property> bedroomAndArea(Integer bedroom, Double minimumArea) {
-		System.out.println("IN bedroomAndArea method.......");
 		Session session = (Session) entityManager.getDelegate();
 		Criteria crit = session.createCriteria(Property.class,"p");
 		crit.createAlias("p.bedRoomDetail", "bed");
 		crit.add(Restrictions.ge("bedRoom", bedroom)).add(Restrictions.ge("bed.area", minimumArea));
 		List<Property> results = crit.list();
-		System.out.println("result size is "+results.size());
 		return results;
 	}
 
