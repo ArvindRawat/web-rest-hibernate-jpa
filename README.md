@@ -1,3 +1,5 @@
+Database : mysql  Ver 8.0.26
+
 1.	Create graebert database using below command.
 Create database graebert;
 2.	Import the project as maven project into eclipse.
